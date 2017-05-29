@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import 'rxjs/add/operator/map';
+// import 'rxjs/add/operator/map';
 import * as firebase from "firebase";
 import { FIREBASE_CONFIG } from "../../APP_SECRETS";
 firebase.initializeApp(FIREBASE_CONFIG);
@@ -25,15 +25,39 @@ export class StatusService{
     })
   }
 
-  getStatusByName(name){
-
+  getWashingStatusByName(name){
+    return firebase.database().ref('1637Orrington/Washing/'+name+'/status').once('value').then((snapshot) => {
+      return snapshot.val();
+    })
   }
 
-  getStartTimeByName(){
-
+  getDryerStatusByName(name){
+    return firebase.database().ref('1637Orrington/Dryers/'+name+'/status').once('value').then((snapshot) => {
+      return snapshot.val();
+    })
   }
 
-  getRemainingTimeByName(){
+  getWashingStartTimeByName(name){
+    return firebase.database().ref('1637Orrington/Washing/'+name+'/startTime').once('value').then((snapshot) => {
+      return snapshot.val();
+    })
+  }
 
+  getDryerStartTimeByName(name){
+    return firebase.database().ref('1637Orrington/Dryers/'+name+'/startTime').once('value').then((snapshot) => {
+      return snapshot.val();
+    })
+  }
+
+  getWashingRemainingTimeByName(name){
+    return firebase.database().ref('1637Orrington/Washing/'+name+'/remainingTime').once('value').then((snapshot) => {
+      return snapshot.val();
+    })
+  }
+
+  getDryerRemainingTimeByName(name){
+    return firebase.database().ref('1637Orrington/Dryers/'+name+'/remainingTime').once('value').then((snapshot) => {
+      return snapshot.val();
+    })
   }
 }
