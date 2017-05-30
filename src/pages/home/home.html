@@ -24,7 +24,7 @@
     </div>
     </ion-card-content>
     <ion-item *ngIf="washing_status_list[i] == 'in use'">
-     <button ion-button clear item-left><ion-icon name="md-alarm" color="blue">&nbsp;</ion-icon>Get notified when available</button>
+     <button ion-button clear item-left (click)="getWashingNotified(washing)"><ion-icon name="md-alarm" color="blue">&nbsp;</ion-icon>Get notified when available</button>
    </ion-item>
   </ion-card>
 
@@ -43,7 +43,7 @@
     </div>
     </ion-card-content>
     <ion-item *ngIf="dryer_status_list[i] == 'in use'">
-     <button ion-button clear item-left><ion-icon name="md-alarm" color="blue">&nbsp;</ion-icon>Get notified when available</button>
+     <button ion-button clear item-left (click)="getDryerNotified(dryer)"><ion-icon name="md-alarm" color="blue">&nbsp;</ion-icon>Get notified when available</button>
    </ion-item>
   </ion-card>
 

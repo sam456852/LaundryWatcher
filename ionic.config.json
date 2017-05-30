@@ -1,6 +1,5 @@
 {
   "name": "laundrywatcher",
-  "app_id": "",
-  "v2": true,
-  "typescript": true
+  "app_id": "8eab7c8a",
+  "type": "ionic-angular"
 }
