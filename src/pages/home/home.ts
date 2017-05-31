@@ -44,8 +44,13 @@ export class HomePage {
 
   }
 
+  refresh(){
+    console.log("refresh!");
+    window.location.reload();
+  }
+
   addNotifications(name, time){
-    let notification_time = new Date(new Date().getTime() + time*6*1000);
+    let notification_time = new Date(new Date().getTime() + time*1000);
     // notification_time.setHours(new Date().getHours());
     // notification_time.setMinutes(new Date().getMinutes()+time);
     let notification = {

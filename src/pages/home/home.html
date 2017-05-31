@@ -3,6 +3,11 @@
     <ion-title>
       LaundryWatcher
     </ion-title>
+    <ion-buttons end>
+      <button ion-button icon-only (click)="refresh()">
+          <ion-icon name="refresh"></ion-icon>
+      </button>
+    </ion-buttons>
   </ion-navbar>
 </ion-header>
 
@@ -16,6 +21,7 @@
         {{washing}}
       </div>
       <div *ngIf="washing_status_list[i] == 'available'" class="available">Available Now!</div>
+      <div *ngIf="washing_status_list[i] == 'offline'" class="inuse">Offline</div>
       <div *ngIf="washing_status_list[i] == 'in use'" class="inuse">In use</div>
       <div *ngIf="washing_status_list[i] == 'in use'">Start at: {{washing_start_time_list[i]}}</div>
       <div *ngIf="washing_status_list[i] == 'in use'">Time remaining: {{washing_remaining_time_list[i]}}</div>
@@ -36,6 +42,7 @@
         {{dryer}}
       </div>
       <div *ngIf="dryer_status_list[i] == 'available'" class="available">Available Now!</div>
+      <div *ngIf="dryer_status_list[i] == 'offline'" class="inuse">Offline</div>
       <div *ngIf="dryer_status_list[i] == 'in use'" class="inuse">In use</div>
       <div *ngIf="dryer_status_list[i] == 'in use'">Start at: {{dryer_start_time_list[i]}}</div>
       <div *ngIf="dryer_status_list[i] == 'in use'">Time remaining: {{dryer_remaining_time_list[i]}}</div>
