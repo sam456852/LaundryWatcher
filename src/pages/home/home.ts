@@ -49,7 +49,7 @@ export class HomePage {
     window.location.reload();
   }
 
-  addNotifications(name, time){
+/*  addNotifications(name, time){
     let notification_time = new Date(new Date().getTime() + time*1000);
     // notification_time.setHours(new Date().getHours());
     // notification_time.setMinutes(new Date().getMinutes()+time);
@@ -76,7 +76,7 @@ export class HomePage {
         //
                 let alert = this.alertCtrl.create({
                     title: name,
-                    message:'You will get notified after '+remaining_time +' minutes',
+                    message:'You will get notified after '+remaining_time +' seconds',
                     buttons: ['Ok']
                 });
         //
@@ -93,22 +93,23 @@ export class HomePage {
     //
           alert.present();
         }
-  }
 
+  }
+*/
   getWashingNotified(washing_name){
     // console.log("washing notification: "+washing_name);
     this.statusService.getWashingRemainingTimeByName(washing_name).then((remaining_time) => {
       // console.log("washing remaining_time: "+washing_name+" "+remaining_time);
-      this.addNotifications(washing_name, remaining_time);
-      this.setNotificiation(washing_name, remaining_time);
+      // this.statusService.addNotifications(washing_name, remaining_time);
+      this.statusService.setNotificiation(washing_name, remaining_time);
     })
   }
 
   getDryerNotified(dryer_name){
     // console.log("dryer notification: "+dryer_name);
     this.statusService.getDryerRemainingTimeByName(dryer_name).then((remaining_time) => {
-      this.addNotifications(dryer_name, remaining_time);
-      this.setNotificiation(dryer_name, remaining_time);
+      // this.statusService.addNotifications(dryer_name, remaining_time);
+      this.statusService.setNotificiation(dryer_name, remaining_time);
     })
   }
 

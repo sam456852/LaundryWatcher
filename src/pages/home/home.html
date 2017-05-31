@@ -24,7 +24,7 @@
       <div *ngIf="washing_status_list[i] == 'offline'" class="inuse">Offline</div>
       <div *ngIf="washing_status_list[i] == 'in use'" class="inuse">In use</div>
       <div *ngIf="washing_status_list[i] == 'in use'">Start at: {{washing_start_time_list[i]}}</div>
-      <div *ngIf="washing_status_list[i] == 'in use'">Time remaining: {{washing_remaining_time_list[i]}}</div>
+      <div *ngIf="washing_status_list[i] == 'in use'">Time remaining: {{washing_remaining_time_list[i]}} seconds</div>
       <!-- <div><progress-bar class="progressbar" [progress]="loadProgress"></progress-bar></div> -->
        <!-- <button ion-button clear color="blue" item-left>Reserve</button> -->
     </div>
