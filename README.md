@@ -35,6 +35,6 @@ $ ionic serve
 
 Then, the Laundry Watcher APP will show in your local web browser.
 
-## Deploying to a Android and IOS devices
+## Deploying to Android and IOS devices
 
 See instruction [here](http://ionicframework.com/docs/intro/deploying/).
